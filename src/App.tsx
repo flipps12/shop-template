@@ -3,6 +3,13 @@ import { Button, createTheme } from "@mui/material"
 import { ShoppingCart, Star } from "lucide-react"
 import { ExpandMore } from '@mui/icons-material';
 
+const scrollToCatalogo = () => {
+  const element = document.getElementById('products');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -59,7 +66,7 @@ export default function App() {
               </div>
               <div className="space-x-4">
                 <ThemeProvider theme={theme}>
-                  <Button color="primary" variant="contained">Ver catálogo</Button>
+                  <Button color="primary" variant="contained" onClick={scrollToCatalogo}>Ver catálogo</Button>
                 </ThemeProvider>
               </div>
             </div>
@@ -70,7 +77,7 @@ export default function App() {
         </section>
         <section className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Featured Products</h2>
+            <h2 id="products" className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Todos los productos</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               <div className="relative group overflow-hidden rounded-lg shadow-lg">
                 <img
@@ -91,10 +98,10 @@ export default function App() {
                   <h3 className="font-semibold text-lg mb-2">Product Name</h3>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-gray-600">$99.99</span>
-                    <div className="flex items-center">
+                    {/* <div className="flex items-center">
                       <Star className="w-4 h-4 fill-current text-yellow-500" />
                       <span className="ml-1 text-sm">4.5</span>
-                    </div>
+                    </div> */}
                   </div>
                   <ThemeProvider theme={dark}>
                     <Button className="w-full" color="primary" variant="contained">Añadir</Button>
