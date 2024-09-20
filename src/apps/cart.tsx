@@ -15,16 +15,41 @@ const theme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    backgroundColor: '#3b82f6', // bg-blue-500
+                    backgroundColor: '#2563eb', // bg-blue-500
                     color: '#fff', // text-white
                     '&:hover': {
-                        backgroundColor: '#2563eb', // hover:bg-blue-600
+                        backgroundColor: '#3b82f6', // hover:bg-blue-600
                     },
                 },
             },
         },
     },
 });
+
+const WhatsappTheme = createTheme({
+    palette: {
+        primary: {
+            main: '#25D366', // Color principal de WhatsApp
+        },
+        secondary: {
+            main: '#fff',
+        },
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#25D366', // Color principal de WhatsApp
+                    color: '#fff', // Texto blanco
+                    '&:hover': {
+                        backgroundColor: '#128C7E', // Color de hover de WhatsApp
+                    },
+                },
+            },
+        },
+    },
+});
+
 
 export default function Cart() {
     return (
@@ -40,6 +65,10 @@ export default function Cart() {
                     </div>
                     <ThemeProvider theme={theme} >
                         <Button color="primary" variant="contained" sx={{ textTransform: 'none' }}>Pagar con Mercado-Pago</Button>
+                    </ThemeProvider>
+                    <div className="h-2"></div>
+                    <ThemeProvider theme={WhatsappTheme} >
+                        <Button color="primary" variant="contained" sx={{ textTransform: 'none' }}>Arreglar pago en WhatsApp</Button>
                     </ThemeProvider>
                 </section>
             </main>
