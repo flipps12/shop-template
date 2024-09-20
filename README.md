@@ -17,8 +17,8 @@ Plantilla Front-End para servidor [Java + Spring-Boot + Mercado Pago SDK](https:
 
 Ejecutar servidor (npm requerido):
 
-```bash
-npm install
-npm run dev
+```
+$ npm install
+$ npm run dev
 ```
 
