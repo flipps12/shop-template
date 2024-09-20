@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import { Button, createTheme } from "@mui/material"
-import { ShoppingCart, Star } from "lucide-react"
+import { ShoppingCart } from "lucide-react"
 import { ExpandMore } from '@mui/icons-material';
 
 const scrollToCatalogo = () => {
