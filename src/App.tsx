@@ -1,7 +1,8 @@
 import { ThemeProvider } from "@emotion/react";
 import { Button, createTheme } from "@mui/material"
-import { ShoppingCart } from "lucide-react"
 import { ExpandMore } from '@mui/icons-material';
+import ProductList from "./components/ProductList";
+import Nav from "./components/nav1";
 
 const scrollToCatalogo = () => {
   const element = document.getElementById('products');
@@ -21,37 +22,12 @@ const theme = createTheme({
   },
 });
 
-const dark = createTheme({
-  palette: {
-    primary: {
-      main: '#111',
-    },
-    secondary: {
-      main: '#fff',
-    },
-  },
-});
-
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-[8vh] sm:h-14 flex items-center">
-        <a className="flex items-center justify-center" href="#">
-          <ShoppingCart className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
-        </a>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <a className="text-sm font-medium hover:underline underline-offset-4" href="#">
-            Products
-          </a>
-          <a className="text-sm font-medium hover:underline underline-offset-4" href="#">
-            Categories
-          </a>
-          <a className="text-sm font-medium hover:underline underline-offset-4" href="#">
-            About
-          </a>
-        </nav>
-      </header>
+      
+      <Nav />
+
       <main className="flex-1">
         <section className="flex flex-col h-[92vh] items-center justify-end w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black">
           <div className="container px-4 md:px-6">
@@ -66,7 +42,7 @@ export default function App() {
               </div>
               <div className="space-x-4">
                 <ThemeProvider theme={theme}>
-                  <Button color="primary" variant="contained" onClick={scrollToCatalogo}>Ver catálogo</Button>
+                  <Button color="primary" variant="contained" onClick={scrollToCatalogo} sx={{ textTransform: 'none' }}>Ver catálogo</Button>
                 </ThemeProvider>
               </div>
             </div>
@@ -75,42 +51,9 @@ export default function App() {
             <ExpandMore sx={{ fontSize: 60 }} className="text-white font-xl" />
           </div>
         </section>
-        <section className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container px-4 md:px-6">
-            <h2 id="products" className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Todos los productos</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              <div className="relative group overflow-hidden rounded-lg shadow-lg">
-                <img
-                  alt={`Product`}
-                  className="object-cover w-full h-60"
-                  height="400"
-                  src={`https://guiadelempresario.com/wp-content/uploads/2020/09/Producto-scaled.jpg?height=400&width=300`}
-                  style={{
-                    aspectRatio: "300/400",
-                    objectFit: "cover",
-                  }}
-                  width="300"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {/* <Button variant="secondary">View Product</Button> */}
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">Product Name</h3>
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-gray-600">$99.99</span>
-                    {/* <div className="flex items-center">
-                      <Star className="w-4 h-4 fill-current text-yellow-500" />
-                      <span className="ml-1 text-sm">4.5</span>
-                    </div> */}
-                  </div>
-                  <ThemeProvider theme={dark}>
-                    <Button className="w-full" color="primary" variant="contained">Añadir</Button>
-                  </ThemeProvider>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+        <ProductList />
+
         <section className="flex justify-center w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
