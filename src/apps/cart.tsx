@@ -39,7 +39,7 @@ export default function Cart() {
                         <ItemCart />
                     </div>
                     <ThemeProvider theme={theme} >
-                        <Button color="primary" variant="contained" sx={{ textTransform: 'none' }}>Pagar</Button>
+                        <Button color="primary" variant="contained" sx={{ textTransform: 'none' }}>Pagar con Mercado-Pago</Button>
                     </ThemeProvider>
                 </section>
             </main>
