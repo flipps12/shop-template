@@ -11,7 +11,7 @@
 Plantilla Front-End para servidor [Java + Spring-Boot + Mercado Pago SDK](https://github.com/flipps12/backend-shop-microservice-v1).
 
 <br>
-<div align="center"><h1>Uso</h1></div>
+<div><h1>Uso</h1></div>
 
 Ejecutar servidor (npm requerido):
 
